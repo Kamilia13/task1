@@ -1,0 +1,83 @@
+*{
+margin: 0;
+padding: 0;
+}
+
+html{
+    height: 100%;
+}
+body{
+    background: linear-gradient( rgb(22, 21, 21), #272726,#272726, #272726,#272726,#272726, rgb(22, 21, 21)) ;
+    font-family: arial;
+    
+}
+h3 {
+    color: white;
+    margin: 50px auto;
+    font-size: 1.5em;
+    text-align: center;
+    animation: mymove 7s infinite;
+  
+}
+h3:hover {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+#h3 {animation-timing-function: linear;
+animation-delay: 0.5s;
+}
+#h3 {animation-timing-function: ease;
+animation-direction:normal;
+}
+
+@keyframes mymove {
+  from {left: 0px;}
+  to {right: 500px;}
+}
+h3:hover{
+    cursor: auto;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-color: crimson;
+
+}
+
+h3::before{
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    color: white;
+    background: crimson;
+    transform: translateX(-100%);
+    z-index: 0;
+    opacity: 0;
+    transition: 0.3s;
+}
+h3::after{
+    position: absolute;
+    content: "";
+    width: 20%;
+    height: 20%;
+    color: crimson;
+    opacity: 0;
+    transition: 0.3s;
+}
+h3:hover::before{
+    transform: rotateZ(90deg) translateY(328%) scaleY(4);
+    background: crimson;
+    opacity: 1;
+}
+
+h3:hover::after {
+    width: 5%;
+    height: 37%;
+    opacity: 1;
+    background: crimson;
+    transform: rotate(90deg) translateY(-40%)  translateX(170%);
+}
